@@ -1,10 +1,12 @@
 #include <CoreFoundation/CoreFoundation.h>
 #include <CoreServices/CoreServices.h>
+#include <Foundation/NSData.h>
 #include <Foundation/NSObjCRuntime.h>
 #include <QuickLook/QuickLook.h>
 
 int HEADER_LENGTH = 4;
-UInt8 VALID_HEADER[4] = {
+
+UInt8 header_bytes[4] = {
     0x00,
     0x50,
     0x42,
@@ -21,33 +23,25 @@ void CancelThumbnailGeneration(void *thisInterface, QLThumbnailRequestRef thumbn
    ----------------------------------------------------------------------------- */
 
 OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thumbnail, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options, CGSize maxSize) {
-    NSURL *URL = (__bridge NSURL *)url;
-    NSLog(@"PSP Previewer executed on '%@'\n", URL);
+    NSLog(@"PSP Previewer executed on '%@'", url);
     // To complete your generator please implement the function GenerateThumbnailForURL in GenerateThumbnailForURL.c
     
     CFDictionaryRef properties = NULL;
     if (!QLThumbnailRequestIsCancelled(thumbnail)) {
         CGImageRef imageRef = NULL;
         
-        CFReadStreamRef fileStream = CFReadStreamCreateWithFile(NULL, url);
+        NSData *imageData = [NSData dataWithContentsOfURL: (__bridge NSURL * _Nonnull)(url)];
         
-        if (CFReadStreamOpen(fileStream)) {
-            //CFDataRef dictData = (CFDataRef)CFDataCreateWithBytesNoCopy(NULL, bytes, length, kCFAllocatorNull);
+        if ([[imageData subdataWithRange:(NSRange){0,4}] isEqualToData:[NSData dataWithBytes:header_bytes length:4]]) {
+        
+        NSLog(@"valid PSP header found!");
 
-            UInt8 header[4];
-            CFReadStreamRead(fileStream, header, 4);
-            
-            if (header == VALID_HEADER) {
-    
-                NSLog(@"valid PSP header found\n");
+        //imageRef = CGImageSourceCreateWithData(dictData, NULL);
 
-                //imageRef = CGImageSourceCreateWithData(dictData, NULL);
+        QLThumbnailRequestSetImage(thumbnail, imageRef, properties);
 
-                QLThumbnailRequestSetImage(thumbnail, imageRef, properties);
-
-                //CFRelease(dictData);
-                CGImageRelease(imageRef);
-            }
+        //CFRelease(dictData);
+        CGImageRelease(imageRef);
         }
     } else {
         QLThumbnailRequestSetImageAtURL(thumbnail, url, properties);
