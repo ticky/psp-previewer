@@ -57,7 +57,7 @@
       </MacroExpansion>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-p /Users/jessica/Downloads/UCES90027/EBOOT.PBP"
+            argument = "-p EXAMPLE.PBP"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

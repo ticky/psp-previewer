@@ -29,6 +29,7 @@
 /* Begin PBXFileReference section */
 		4C83F0BF1EE4D84100E6BA77 /* ICON0.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON0.PNG; sourceTree = "<group>"; };
 		4C83F0C41EE4EB5800E6BA77 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
+		4C99454B1EE4FA3A001E27E7 /* EXAMPLE.PBP */ = {isa = PBXFileReference; lastKnownFileType = file; path = EXAMPLE.PBP; sourceTree = SOURCE_ROOT; };
 		4CE306951EE3BD4600341D8E /* PSP Previewer.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PSP Previewer.qlgenerator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE306981EE3BD4600341D8E /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; tabWidth = 2; wrapsLines = 0; };
 		4CE3069A1EE3BD4600341D8E /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; tabWidth = 2; wrapsLines = 0; };
@@ -58,6 +59,7 @@
 		4C83F0CC1EE4F11B00E6BA77 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4C99454B1EE4FA3A001E27E7 /* EXAMPLE.PBP */,
 				4C83F0BF1EE4D84100E6BA77 /* ICON0.PNG */,
 				4CE3069E1EE3BD4600341D8E /* Info.plist */,
 			);
