@@ -13,19 +13,6 @@
 		4CE3069D1EE3BD4600341D8E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3069C1EE3BD4600341D8E /* main.c */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildRule section */
-		4C83F0C61EE4EBA400E6BA77 /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = "com.apple.build-tasks.copy-png-file";
-			filePatterns = "*.PNG";
-			fileType = pattern.proxy;
-			isEditable = 1;
-			outputFiles = (
-			);
-			script = "# copypng\n";
-		};
-/* End PBXBuildRule section */
-
 /* Begin PBXFileReference section */
 		4C83F0BF1EE4D84100E6BA77 /* ICON0.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON0.PNG; sourceTree = "<group>"; };
 		4C83F0C41EE4EB5800E6BA77 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
@@ -118,7 +105,6 @@
 				4CE306931EE3BD4600341D8E /* Resources */,
 			);
 			buildRules = (
-				4C83F0C61EE4EBA400E6BA77 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -138,6 +124,7 @@
 				TargetAttributes = {
 					4CE306941EE3BD4600341D8E = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 3P4EDQFZZ7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -206,7 +193,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -225,7 +212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -254,7 +241,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -267,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -277,9 +264,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3P4EDQFZZ7;
 				INFOPLIST_FILE = "PSP Previewer/Info.plist";
 				INSTALL_PATH = "~/Library/QuickLook";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.jessicastokes.PSP-Previewer";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.jessicastokes.psp-previewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;
 			};
@@ -289,9 +277,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 3P4EDQFZZ7;
 				INFOPLIST_FILE = "PSP Previewer/Info.plist";
 				INSTALL_PATH = "~/Library/QuickLook";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.jessicastokes.PSP-Previewer";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.jessicastokes.psp-previewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;
 			};

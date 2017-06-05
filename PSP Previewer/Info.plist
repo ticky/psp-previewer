@@ -4,6 +4,28 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>pbp</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Sony PSP Executable</string>
+			<key>CFBundleTypeRole</key>
+			<string>QLGenerator</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.sony.psp.firmware</string>
+				<string>com.sony.pbp</string>
+			</array>
+			<key>LSTypeIsPackage</key>
+			<false/>
+			<key>NSPersistentStoreTypeKey</key>
+			<string>Binary</string>
+		</dict>
+	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -46,28 +68,6 @@
 	<false/>
 	<key>QLThumbnailMinimumSize</key>
 	<real>17</real>
-	<key>CFBundleDocumentTypes</key>
-	<array>
-		<dict>
-			<key>LSItemContentTypes</key>
-			<array>
-				<string>com.sony.psp.firmware</string>
-				<string>com.sony.pbp</string>
-			</array>
-			<key>CFBundleTypeExtensions</key>
-			<array>
-				<string>pbp</string>
-			</array>
-			<key>CFBundleTypeName</key>
-			<string>Sony PSP Executable</string>
-			<key>CFBundleTypeRole</key>
-			<string>QLGenerator</string>
-			<key>LSTypeIsPackage</key>
-			<false/>
-			<key>NSPersistentStoreTypeKey</key>
-			<string>Binary</string>
-		</dict>
-	</array>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>
