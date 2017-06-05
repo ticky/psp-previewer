@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C83F0C01EE4D84100E6BA77 /* ICON0.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 4C83F0BF1EE4D84100E6BA77 /* ICON0.PNG */; };
 		4CE306991EE3BD4600341D8E /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE306981EE3BD4600341D8E /* GenerateThumbnailForURL.m */; };
 		4CE3069B1EE3BD4600341D8E /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3069A1EE3BD4600341D8E /* GeneratePreviewForURL.m */; };
 		4CE3069D1EE3BD4600341D8E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3069C1EE3BD4600341D8E /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C83F0BF1EE4D84100E6BA77 /* ICON0.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON0.PNG; sourceTree = "<group>"; };
 		4CE306951EE3BD4600341D8E /* PSP Previewer.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PSP Previewer.qlgenerator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE306981EE3BD4600341D8E /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
 		4CE3069A1EE3BD4600341D8E /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 		4CE306971EE3BD4600341D8E /* PSP Previewer */ = {
 			isa = PBXGroup;
 			children = (
+				4C83F0BF1EE4D84100E6BA77 /* ICON0.PNG */,
 				4CE306981EE3BD4600341D8E /* GenerateThumbnailForURL.m */,
 				4CE3069A1EE3BD4600341D8E /* GeneratePreviewForURL.m */,
 				4CE3069C1EE3BD4600341D8E /* main.c */,
@@ -126,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C83F0C01EE4D84100E6BA77 /* ICON0.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +281,7 @@
 				4CE306A31EE3BD4600341D8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
