@@ -30,8 +30,8 @@
 		4C83F0BF1EE4D84100E6BA77 /* ICON0.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON0.PNG; sourceTree = "<group>"; };
 		4C83F0C41EE4EB5800E6BA77 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		4CE306951EE3BD4600341D8E /* PSP Previewer.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PSP Previewer.qlgenerator"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CE306981EE3BD4600341D8E /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
-		4CE3069A1EE3BD4600341D8E /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
+		4CE306981EE3BD4600341D8E /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; tabWidth = 2; wrapsLines = 0; };
+		4CE3069A1EE3BD4600341D8E /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; tabWidth = 2; wrapsLines = 0; };
 		4CE3069C1EE3BD4600341D8E /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		4CE3069E1EE3BD4600341D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
