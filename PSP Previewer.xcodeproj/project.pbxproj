@@ -13,8 +13,22 @@
 		4CE3069D1EE3BD4600341D8E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4CE3069C1EE3BD4600341D8E /* main.c */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		4C83F0C61EE4EBA400E6BA77 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = "com.apple.build-tasks.copy-png-file";
+			filePatterns = "*.PNG";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# copypng\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
 		4C83F0BF1EE4D84100E6BA77 /* ICON0.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON0.PNG; sourceTree = "<group>"; };
+		4C83F0C41EE4EB5800E6BA77 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		4CE306951EE3BD4600341D8E /* PSP Previewer.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PSP Previewer.qlgenerator"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE306981EE3BD4600341D8E /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
 		4CE3069A1EE3BD4600341D8E /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
@@ -33,10 +47,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C83F0C31EE4EB5800E6BA77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C83F0C41EE4EB5800E6BA77 /* QuickLook.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C83F0CC1EE4F11B00E6BA77 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4C83F0BF1EE4D84100E6BA77 /* ICON0.PNG */,
+				4CE3069E1EE3BD4600341D8E /* Info.plist */,
+			);
+			name = Resources;
+			path = "PSP Previewer";
+			sourceTree = "<group>";
+		};
 		4CE3068B1EE3BD4600341D8E = {
 			isa = PBXGroup;
 			children = (
 				4CE306971EE3BD4600341D8E /* PSP Previewer */,
+				4C83F0CC1EE4F11B00E6BA77 /* Resources */,
+				4C83F0C31EE4EB5800E6BA77 /* Frameworks */,
 				4CE306961EE3BD4600341D8E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,11 +86,9 @@
 		4CE306971EE3BD4600341D8E /* PSP Previewer */ = {
 			isa = PBXGroup;
 			children = (
-				4C83F0BF1EE4D84100E6BA77 /* ICON0.PNG */,
 				4CE306981EE3BD4600341D8E /* GenerateThumbnailForURL.m */,
 				4CE3069A1EE3BD4600341D8E /* GeneratePreviewForURL.m */,
 				4CE3069C1EE3BD4600341D8E /* main.c */,
-				4CE3069E1EE3BD4600341D8E /* Info.plist */,
 			);
 			path = "PSP Previewer";
 			sourceTree = "<group>";
@@ -84,6 +116,7 @@
 				4CE306931EE3BD4600341D8E /* Resources */,
 			);
 			buildRules = (
+				4C83F0C61EE4EBA400E6BA77 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -243,7 +276,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "PSP Previewer/Info.plist";
-				INSTALL_PATH = /Library/QuickLook;
+				INSTALL_PATH = "~/Library/QuickLook";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.jessicastokes.PSP-Previewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;
@@ -255,7 +288,7 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "PSP Previewer/Info.plist";
-				INSTALL_PATH = /Library/QuickLook;
+				INSTALL_PATH = "~/Library/QuickLook";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.jessicastokes.PSP-Previewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = qlgenerator;
