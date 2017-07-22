@@ -1,5 +1,6 @@
 #include <CoreServices/CoreServices.h>
 #include <Foundation/NSData.h>
+#include <Foundation/NSUrl.h>
 #include <QuickLook/QuickLook.h>
 
 #define PBP_OFFSET_LENGTH 4
@@ -37,8 +38,9 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
   // If we have permission, press on!
   if (!QLThumbnailRequestIsCancelled(thumbnail)) {
     // Load the file in question
-    NSData *imageData = [NSData dataWithContentsOfURL: (__bridge NSURL * _Nonnull)(url)];
-        
+    NSURL *imageUrl = (__bridge NSURL * _Nonnull)(url);
+    NSData *imageData = [NSData dataWithContentsOfMappedFile: imageUrl.path];
+    
     // If the file starts with the PBP magic header, let's look at pulling out some details!
     if ([
       [imageData subdataWithRange:(NSRange){0, PBP_MAGIC_LENGTH}]
