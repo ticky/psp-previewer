@@ -7,7 +7,7 @@
 #define PBP_OFFSET_LENGTH 4
 #define PBP_MAGIC_LENGTH 4
 
-// Undocumented ( QuickLook Properties
+// Undocumented QuickLook Properties
 // Borrowed from https://github.com/Marginal/QLVideo/blob/4d6fdee98f87c13ad9fcbb2a66d473a011ec5db9/qlgenerator/GenerateThumbnailForURL.m
 const CFStringRef kQLThumbnailPropertyIconFlavorKey = CFSTR("IconFlavor");
 
