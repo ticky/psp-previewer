@@ -1,10 +1,33 @@
 #include <CoreServices/CoreServices.h>
 #include <Foundation/NSData.h>
+#include <Foundation/NSDictionary.h>
 #include <Foundation/NSUrl.h>
 #include <QuickLook/QuickLook.h>
 
 #define PBP_OFFSET_LENGTH 4
 #define PBP_MAGIC_LENGTH 4
+
+// Undocumented ( QuickLook Properties
+// Borrowed from https://github.com/Marginal/QLVideo/blob/4d6fdee98f87c13ad9fcbb2a66d473a011ec5db9/qlgenerator/GenerateThumbnailForURL.m
+const CFStringRef kQLThumbnailPropertyIconFlavorKey = CFSTR("IconFlavor");
+
+typedef NS_ENUM(NSInteger, QLThumbnailIconFlavor)
+{
+  kQLThumbnailIconPlainFlavor		= 0,
+  kQLThumbnailIconShadowFlavor	= 1,
+  kQLThumbnailIconBookFlavor		= 2,
+  kQLThumbnailIconMovieFlavor		= 3,
+  kQLThumbnailIconAddressFlavor	= 4,
+  kQLThumbnailIconImageFlavor		= 5,
+  kQLThumbnailIconGlossFlavor		= 6,
+  kQLThumbnailIconSlideFlavor		= 7,
+  kQLThumbnailIconSquareFlavor	= 8,
+  kQLThumbnailIconBorderFlavor	= 9,
+  // = 10,
+  kQLThumbnailIconCalendarFlavor	= 11,
+  kQLThumbnailIconPatternFlavor	= 12,
+};
+
 const UInt8 PBP_MAGIC[PBP_MAGIC_LENGTH] = {0x00, 0x50, 0x42, 0x50};
 
 uint32_t FourLittleNSDataBytesToBigUInt32(NSData* data) {
@@ -33,13 +56,15 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
   CFBundleRef mainBundle = CFBundleGetMainBundle();
   CFURLRef fallbackThumbnailURL = CFBundleCopyResourceURL(mainBundle, CFSTR("ICON0"), CFSTR("PNG"), NULL);
 
-  CFDictionaryRef properties = NULL;
+  NSDictionary *properties = [NSDictionary dictionary];
 
   // If we have permission, press on!
   if (!QLThumbnailRequestIsCancelled(thumbnail)) {
     // Load the file in question
     NSURL *imageUrl = (__bridge NSURL * _Nonnull)(url);
     NSData *imageData = [NSData dataWithContentsOfMappedFile: imageUrl.path];
+    
+    properties = @{(__bridge NSString *) kQLThumbnailPropertyIconFlavorKey: @(kQLThumbnailIconShadowFlavor) };
     
     // If the file starts with the PBP magic header, let's look at pulling out some details!
     if ([
@@ -63,16 +88,16 @@ OSStatus GenerateThumbnailForURL(void *thisInterface,
         // Read the icon data, and pass it to QuickLook!
         NSData *icon0 = [imageData subdataWithRange:(NSRange){icon0_offset, icon0_length}];
 
-        QLThumbnailRequestSetImageWithData(thumbnail, (__bridge CFDataRef)icon0, properties);
+        QLThumbnailRequestSetImageWithData(thumbnail, (__bridge CFDataRef)icon0, (__bridge CFDictionaryRef)properties);
       } else {
         NSLog(@"ICON0 is missing!");
         // Pass QuickLook a fallback image
-        QLThumbnailRequestSetImageAtURL(thumbnail, fallbackThumbnailURL, properties);
+        QLThumbnailRequestSetImageAtURL(thumbnail, fallbackThumbnailURL, (__bridge CFDictionaryRef)properties);
       }
     }
   } else {
     NSLog(@"no PSP magic header found!");
-    QLThumbnailRequestSetImageAtURL(thumbnail, url, properties);
+    QLThumbnailRequestSetImageAtURL(thumbnail, url, (__bridge CFDictionaryRef)properties);
   }
 
   return noErr;
