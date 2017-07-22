@@ -41,11 +41,7 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "NO">
-      <PathRunnable
-         runnableDebuggingMode = "0"
-         FilePath = "/Users/jessica/Repositories/pbp-preview/PSP Previewer/qlmanage">
-      </PathRunnable>
+      allowLocationSimulation = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -55,20 +51,6 @@
             ReferencedContainer = "container:PSP Previewer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-p EXAMPLE.PBP"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-c com.sony.psp.firmware"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "-g &quot;$(BUILD_DIR)/Debug/PSP Previewer.qlgenerator&quot;"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
